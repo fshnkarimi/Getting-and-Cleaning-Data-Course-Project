@@ -44,5 +44,5 @@ merged_dataset[["Activity"]] <- factor(merged_dataset[, Activity], levels = acti
 merged_dataset[["SubjectNum"]] <- as.factor(merged_dataset[, SubjectNum])
 merged_dataset <- reshape2::melt(data = merged_dataset, id = c("SubjectNum", "Activity"))
 merged_dataset <- reshape2::dcast(data = merged_dataset, SubjectNum + Activity ~ variable, fun.aggregate = mean)
-data.table::fwrite(x = merged_dataset, file = "tidy_dataset.csv", quote = FALSE)
+data.table::fwrite(x = merged_dataset, file = "tidy_dataset.txt", quote = FALSE)
 
